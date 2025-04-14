@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <h1>Tests</h1>
+    <main>
+        <div class="test" id="test1">
+            <h2>Test 1</h2>
+            <p>GET request to endpoint /cities</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected response body: Array of cities</p>
+            <h5>...</h5>
+            <button id="test1-b">Test!</button>
+        </div>
+        <div class="test" id="test2">
+            <h2>Test 2</h2>
+            <p>POST request to endpoint /cities of a city not in the database</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected Response body: City Object with ID</p>
+            <h5>...</h5>
+            <button id="test2-b">Test!</button>
+        </div>
+        <div class="test" id="test3">
+            <h2>Test 3</h2>
+            <p>DELETE request to endpoint /cities</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected Response body: "Delete OK"</p>
+            <h5>...</h5>
+            <button id="test3-b">Test!</button>
+        </div>
+        <div class="test" id="test4">
+            <h2>Test 4</h2>
+            <p>GET request to endpoint /cities</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected Response body: Cities Array with Malmö and without Lille</p>
+            <h5>...</h5>
+            <button id="test4-b">Test!</button>
+        </div>
+        <div class="test" id="test5">
+            <h2>Test 5</h2>
+            <p>GET request to endpoint /cities/43</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected Response body: City Object for ID 43</p>
+            <h5>...</h5>
+            <button id="test5-b">Test!</button>
+        </div>
+        <div class="test" id="test6">
+            <h2>Test 6</h2>
+            <p>GET request to endpoint /cities/search?text=en</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected Response body: Array of cities where "en" is included in city name</p>
+            <h5>...</h5>
+            <button id="test6-b">Test!</button>
+        </div>
+        <div class="test" id="test7">
+            <h2>Test 7</h2>
+            <p>GET request to endpoint /cities/search?text=en&country=Sweden</p>
+            <p>Expected status: 200 OK</p>
+            <p>Expected Response body: Empty Array</p>
+            <h5>...</h5>
+            <button id="test7-b">Test!</button>
+        </div>
+        <div class="test" id="test8">
+            <h2>Test 8</h2>
+            <p>POST request to endpoint /cities with request body of a city already in the database</p>
+            <p>Expected status: 409 Conflict</p>
+            <p>Expected Response body: "Error: City already exists"</p>
+            <h5>...</h5>
+            <button id="test8-b">Test!</button>
+        </div>
+    </main>
+    <script src="test.js"></script>
+</body>
+</html>

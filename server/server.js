@@ -20,7 +20,7 @@ const cities = [
 
 async function handler(req) {
     let headersObj = new Headers();
-    headersObj.set("Access-Allow-Control-Origin", "*");
+    headersObj.set("Access-Control-Allow-Origin", "*");
     headersObj.set("Access-Control-Allow-Methods", "OPTIONS, POST, DELETE");
     headersObj.set("Access-Control-Allow-Headers", "Content-Type");
     if (req.method === "OPTIONS") {

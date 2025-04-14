@@ -1,0 +1,47 @@
+@font-face {
+    font-family: head;
+    src: url(../fonts/Jersey20-Regular.ttf);
+}
+
+body {
+    background-color: #55c3ee;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h1, h2 {
+    font-family: head;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+main {
+    background-color: skyblue;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+    font-family: Helvetica;
+}
+
+.test {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 400px;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-self: center;
+    width: 400px;
+}
