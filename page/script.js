@@ -29,7 +29,7 @@ async function deleteCity(cityID) {
 
 async function eventListeners(arg) {
     if (arg === "delete") {
-        let allCities = document.querySelectorAll(".city");
+        let allCities = document.querySelectorAll(".city button");
         for (let city of allCities) {
             city.addEventListener("click", () => {deleteCity(city.cityID)});
         }
