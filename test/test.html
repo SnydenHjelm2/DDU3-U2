@@ -15,7 +15,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected response body: Array of cities</p>
             <h5>...</h5>
-            <button id="test1-b">Test!</button>
         </div>
         <div class="test" id="test2">
             <h2>Test 2</h2>
@@ -23,7 +22,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected Response body: City Object with ID</p>
             <h5>...</h5>
-            <button id="test2-b">Test!</button>
         </div>
         <div class="test" id="test3">
             <h2>Test 3</h2>
@@ -31,7 +29,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected Response body: "Delete OK"</p>
             <h5>...</h5>
-            <button id="test3-b">Test!</button>
         </div>
         <div class="test" id="test4">
             <h2>Test 4</h2>
@@ -39,7 +36,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected Response body: Cities Array with Malmö and without Lille</p>
             <h5>...</h5>
-            <button id="test4-b">Test!</button>
         </div>
         <div class="test" id="test5">
             <h2>Test 5</h2>
@@ -47,7 +43,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected Response body: City Object for ID 43</p>
             <h5>...</h5>
-            <button id="test5-b">Test!</button>
         </div>
         <div class="test" id="test6">
             <h2>Test 6</h2>
@@ -55,7 +50,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected Response body: Array of cities where "en" is included in city name</p>
             <h5>...</h5>
-            <button id="test6-b">Test!</button>
         </div>
         <div class="test" id="test7">
             <h2>Test 7</h2>
@@ -63,7 +57,6 @@
             <p>Expected status: 200 OK</p>
             <p>Expected Response body: Empty Array</p>
             <h5>...</h5>
-            <button id="test7-b">Test!</button>
         </div>
         <div class="test" id="test8">
             <h2>Test 8</h2>
@@ -71,7 +64,48 @@
             <p>Expected status: 409 Conflict</p>
             <p>Expected Response body: "Error: City already exists"</p>
             <h5>...</h5>
-            <button id="test8-b">Test!</button>
+        </div>
+        <div class="test" id="test9">
+            <h2>Test 9</h2>
+            <p>POST request to endpoint /cities with request body of city missing "country" key</p>
+            <p>Expected status: 400 Bad Request</p>
+            <p>Expected Response body: "Invalid request body"</p>
+            <h5>...</h5>
+        </div>
+        <div class="test" id="test10">
+            <h2>Test 10</h2>
+            <p>DELETE request to endpoint /cities with request body of cityID that is not in the database</p>
+            <p>Expected status: 404 Not Found</p>
+            <p>Expected Response body: "Error: City not found"</p>
+            <h5>...</h5>
+        </div>
+        <div class="test" id="test11">
+            <h2>Test 11</h2>
+            <p>DELETE request to endpoint /cities with request body of empty object</p>
+            <p>Expected status: 400 Bad Request</p>
+            <p>Expected Response body: "Invalid Request Body"</p>
+            <h5>...</h5>
+        </div>
+        <div class="test" id="test12">
+            <h2>Test 12</h2>
+            <p>POST request to endpoint /messages</p>
+            <p>Expected status: 400 Bad Request</p>
+            <p>Expected Response body: "Bad Request, Invalid endpoint or method"</p>
+            <h5>...</h5>
+        </div>
+        <div class="test" id="test13">
+            <h2>Test 13</h2>
+            <p>GET request to endpoint /cities/search</p>
+            <p>Expected status: 400 Bad Request</p>
+            <p>Expected Response body: "Error: Missing parameter 'text'"</p>
+            <h5>...</h5>
+        </div>
+        <div class="test" id="test14">
+            <h2>Test 14</h2>
+            <p>DELETE request to endpoint /mordor</p>
+            <p>Expected status: 400 Bad Request</p>
+            <p>Expected Response body: "Bad Request, Invalid endpoint or method"</p>
+            <h5>...</h5>
         </div>
     </main>
     <script src="test.js"></script>

@@ -36,11 +36,11 @@ async function handler(req) {
             return new Response(JSON.stringify(cities), {headers: headersObj});
         } else if (req.method === "POST") {
             if (req.headers.get("Content-Type") !== "application/json") {
-                return new Response(`{"error": "Invalid Content-Type, JSON expected"}`, {status: 400, headers: headersObj});
+                return new Response(JSON.stringify({"error": "Invalid Content-Type, JSON expected"}), {status: 400, headers: headersObj});
             }
             let reqBody = await req.json();
             if (!reqBody.name || !reqBody.country) {
-                return new Response("Invalid request body", {status: 400, headers: headersObj});
+                return new Response(JSON.stringify("Invalid request body"), {status: 400, headers: headersObj});
             }
 
             let id = cities.sort((a, b) => a.id - b.id);
@@ -50,28 +50,28 @@ async function handler(req) {
                 country: reqBody.country
             }
             if (cities.find((x) => x.name === obj.name)) {
-                return new Response("Error: City already exists", {status: 409, headers: headersObj});
+                return new Response(JSON.stringify("Error: City already exists"), {status: 409, headers: headersObj});
             } else {
                 cities.push(obj);
                 return new Response(JSON.stringify(obj), {headers: headersObj});
             }
         } else if (req.method === "DELETE") {
             if (req.headers.get("Content-Type") !== "application/json") {
-                return new Response(`{"error": "Invalid Content-Type, JSON expected"}`, {status: 400, headers: headersObj});
+                return new Response(JSON.stringify({"error": "Invalid Content-Type, JSON expected"}), {status: 400, headers: headersObj});
             }
 
             let reqBody = await req.json();
             if (!reqBody.id) {
-                return new Response("Invalid request body", {status: 400, headers: headersObj});
+                return new Response(JSON.stringify("Invalid request body"), {status: 400, headers: headersObj});
             }
 
             let city = cities.find((x) => x.id === parseInt(reqBody.id));
             if (!city) {
-                return new Response("Error: No city found", {status: 404, headers: headersObj});
+                return new Response(JSON.stringify("Error: No city found"), {status: 404, headers: headersObj});
             } else {
                 let index = cities.findIndex((x) => x.id === city.id);
                 cities.splice(index, 1);
-                return new Response("Delete OK", {headers: headersObj});
+                return new Response(JSON.stringify("Delete OK"), {headers: headersObj});
             }
         }
     } else if (url.pathname === "/cities/search") {
@@ -91,7 +91,7 @@ async function handler(req) {
                 }
             }
         } else {
-            return new Response("Error: Missing parameter 'text'", {status: 400, headers: headersObj});
+            return new Response(JSON.stringify("Error: Missing parameter 'text'"), {status: 400, headers: headersObj});
         }
     }
 
@@ -101,17 +101,17 @@ async function handler(req) {
     if (idURLMatch) {
         if (req.method === "GET") {
             let id = idURLMatch.pathname.groups.id;
-            if (isNaN(parseInt(id))) {return new Response("Bad Request, Invalid endpoint or method", {status: 400, headers: headersObj})};
+            if (isNaN(parseInt(id))) {return new Response(JSON.stringify("Bad Request, Invalid endpoint or method"), {status: 400, headers: headersObj})};
             let city = cities.find((x) => x.id === parseInt(id));
             if (!city) {
-                return new Response("Error: City not found", {status: 404, headers: headersObj});
+                return new Response(JSON.stringify("Error: City not found"), {status: 404, headers: headersObj});
             } else {
                 return new Response(JSON.stringify(city), {headers: headersObj});
             }
         }
     }
 
-    return new Response("Bad Request, Invalid endpoint or method", {status: 400, headers: headersObj});
+    return new Response(JSON.stringify("Bad Request, Invalid endpoint or method"), {status: 400, headers: headersObj});
 }
 
 Deno.serve(handler);
