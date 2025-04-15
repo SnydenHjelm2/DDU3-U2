@@ -49,7 +49,7 @@ async function handler(req) {
                 name: reqBody.name,
                 country: reqBody.country
             }
-            if (cities.find((x) => x.name === obj.name)) {
+            if (cities.find((x) => x.name.toLowerCase() === obj.name.toLowerCase())) {
                 return new Response(JSON.stringify("Error: City already exists"), {status: 409, headers: headersObj});
             } else {
                 cities.push(obj);

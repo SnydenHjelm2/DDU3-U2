@@ -37,7 +37,7 @@ const test1 = () => {
         }
     }).then((reso) => {
         if (reso.length === 17) {
-            document.querySelector("#test1 h5").textContent += " Response body was Array";
+            document.querySelector("#test1 h5").textContent += " Correct Response body";
             document.querySelector("#test1").style.backgroundColor = "lime";
         }
     });

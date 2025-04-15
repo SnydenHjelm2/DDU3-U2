@@ -1,0 +1,79 @@
+@font-face {
+    font-family: bread;
+    src: url(../fonts/Outfit-VariableFont_wght.ttf);
+}
+
+#add-city {
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+#add-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #90f390;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px 20px;
+}
+
+#add-controls button {
+    width: 100px;
+    background-color: #17ce17;
+    border-color: #17ce17;
+} 
+
+body {
+    margin: 5px;
+    box-sizing: border-box;
+    background-color: #90f390;
+}
+
+.city {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid black;
+    margin: 5px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: #90f390;
+}
+
+.city button {
+    justify-self: center;
+    background-color: tomato;
+    border-color: tomato;
+    border-radius: 5px;
+}
+
+.city p {
+    margin: 5px 10px;
+    justify-self: start;
+}
+
+#city-list {
+    overflow: scroll;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+main {
+    max-width: 1200px;
+    height: 500px;
+    margin: auto;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    font-family: bread;
+    border: 2px solid black;
+    border-radius: 10px;
+}
