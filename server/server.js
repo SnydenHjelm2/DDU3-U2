@@ -76,9 +76,9 @@ async function handler(req) {
         }
     } else if (url.pathname === "/cities/search") {
         let paramText = url.searchParams.has("text");
-        if (paramText) {
+        let text = url.searchParams.get("text");
+        if (paramText && text) {
             if (req.method === "GET") {
-                let text = url.searchParams.get("text");
                 let country = url.searchParams.get("country");
 
                 if (country) {

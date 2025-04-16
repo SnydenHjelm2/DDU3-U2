@@ -8,7 +8,7 @@
     border-left: 2px solid black;
 }
 
-#add-controls {
+.controls {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
     margin: 5px 20px;
 }
 
-#add-controls button {
+.controls button {
     width: 100px;
     background-color: #17ce17;
     border-color: #17ce17;
@@ -77,4 +77,13 @@ main {
     font-family: bread;
     border: 2px solid black;
     border-radius: 10px;
+}
+
+#search-city {
+    overflow: hidden;
+}
+
+#search-list {
+    overflow: scroll;
+    max-height: 200px;
 }
