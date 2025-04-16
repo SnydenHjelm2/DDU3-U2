@@ -83,10 +83,10 @@ async function handler(req) {
 
                 if (country) {
                     let citiesInCountry = cities.filter((x) => x.country.toLowerCase() === country.toLowerCase());
-                    let resultCities = citiesInCountry.filter((x) => x.name.includes(text));
+                    let resultCities = citiesInCountry.filter((x) => x.name.toLowerCase().includes(text.toLowerCase()));
                     return new Response(JSON.stringify(resultCities), {headers: headersObj});
                 } else {
-                    let resultCities = cities.filter((x) => x.name.includes(text));
+                    let resultCities = cities.filter((x) => x.name.toLowerCase().includes(text.toLowerCase()));
                     return new Response(JSON.stringify(resultCities), {headers: headersObj});
                 }
             }
