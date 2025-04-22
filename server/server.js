@@ -43,6 +43,16 @@ async function handler(req) {
                 return new Response(JSON.stringify("Invalid request body"), {status: 400, headers: headersObj});
             }
 
+            if (cities.length === 0) {
+                let obj = {
+                    id: 1,
+                    name: reqBody.name,
+                    country: reqBody.country
+                }
+                cities.push(obj);
+                return new Response(JSON.stringify(obj), {headers: headersObj});
+            }
+
             let id = cities.sort((a, b) => a.id - b.id);
             let obj = {
                 id: id[id.length - 1].id + 1,
