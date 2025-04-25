@@ -8,20 +8,20 @@ function optionsGen(method, body) {
 }
 
 async function tester() {
-    await test1();
+    test1();
     await test2();
     await test3();
     await test4();
-    await test5();
-    await test6();
-    await test7();
+    test5();
+    test6();
+    test7();
     await test8();
     await test9();
     await test10();
     await test11();
-    await test12();
-    await test13();
-    await test14();
+    test12();
+    test13();
+    test14();
 }
 
 const test1 = () => {
